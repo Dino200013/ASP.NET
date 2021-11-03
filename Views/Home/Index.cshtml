@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@using PagedList;
+@using PagedList.Mvc;
+
+@model IPagedList<prj1.Models.Tablepokemons1081640>
+
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().pId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().pImg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().pName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().pType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().pLv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().pHp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().pAtk)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().pDef)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().pSpeed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().pMoves)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.pId)
+    </td>
+    <td>
+        <img src="~/Images/@item.pImg" style="width:200px;height:200px;">
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.pName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.pType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.pLv)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.pHp)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.pAtk)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.pDef)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.pSpeed)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.pMoves)
+    </td>
+    <td>
+        <a href="@Url.Action("Edit")?pId=@item.pId"
+           class="btn btn-warning">編輯</a>
+        <a href="@Url.Action("Delete")?pId=@item.pId"
+           class="btn btn-danger"
+           onclick="return confirm('確定要刪除 @item.pName 的紀錄嗎?');">
+            刪除
+        </a>
+    </td>
+</tr>
+    }
+
+</table>
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))

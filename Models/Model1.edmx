@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="netdbAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TableMembers1081640">
+          <Key>
+            <PropertyRef Name="fId" />
+          </Key>
+          <Property Name="fId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="fUserId" Type="nvarchar" MaxLength="50" />
+          <Property Name="fPwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="fName" Type="nvarchar" MaxLength="50" />
+          <Property Name="fEmail" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tablepokemons1081640">
+          <Key>
+            <PropertyRef Name="pId" />
+          </Key>
+          <Property Name="pId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="pImg" Type="nvarchar" MaxLength="50" />
+          <Property Name="pName" Type="nvarchar" MaxLength="10" />
+          <Property Name="pType" Type="nvarchar" MaxLength="10" />
+          <Property Name="pLv" Type="int" />
+          <Property Name="pHp" Type="int" />
+          <Property Name="pAtk" Type="int" />
+          <Property Name="pDef" Type="int" />
+          <Property Name="pSpeed" Type="int" />
+          <Property Name="pMoves" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="netdbAModelStoreContainer">
+          <EntitySet Name="TableMembers1081640" EntityType="Self.TableMembers1081640" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tablepokemons1081640" EntityType="Self.Tablepokemons1081640" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="netdbAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TableMembers1081640">
+          <Key>
+            <PropertyRef Name="fId" />
+          </Key>
+          <Property Name="fId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tablepokemons1081640">
+          <Key>
+            <PropertyRef Name="pId" />
+          </Key>
+          <Property Name="pId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="pImg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="pType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="pLv" Type="Int32" />
+          <Property Name="pHp" Type="Int32" />
+          <Property Name="pAtk" Type="Int32" />
+          <Property Name="pDef" Type="Int32" />
+          <Property Name="pSpeed" Type="Int32" />
+          <Property Name="pMoves" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TableMembers1081640" EntityType="Self.TableMembers1081640" />
+          <EntitySet Name="Tablepokemons1081640" EntityType="Self.Tablepokemons1081640" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="netdbAModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="TableMembers1081640">
+            <EntityTypeMapping TypeName="netdbAModel.TableMembers1081640">
+              <MappingFragment StoreEntitySet="TableMembers1081640">
+                <ScalarProperty Name="fId" ColumnName="fId" />
+                <ScalarProperty Name="fUserId" ColumnName="fUserId" />
+                <ScalarProperty Name="fPwd" ColumnName="fPwd" />
+                <ScalarProperty Name="fName" ColumnName="fName" />
+                <ScalarProperty Name="fEmail" ColumnName="fEmail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tablepokemons1081640">
+            <EntityTypeMapping TypeName="netdbAModel.Tablepokemons1081640">
+              <MappingFragment StoreEntitySet="Tablepokemons1081640">
+                <ScalarProperty Name="pId" ColumnName="pId" />
+                <ScalarProperty Name="pImg" ColumnName="pImg" />
+                <ScalarProperty Name="pName" ColumnName="pName" />
+                <ScalarProperty Name="pType" ColumnName="pType" />
+                <ScalarProperty Name="pLv" ColumnName="pLv" />
+                <ScalarProperty Name="pHp" ColumnName="pHp" />
+                <ScalarProperty Name="pAtk" ColumnName="pAtk" />
+                <ScalarProperty Name="pDef" ColumnName="pDef" />
+                <ScalarProperty Name="pSpeed" ColumnName="pSpeed" />
+                <ScalarProperty Name="pMoves" ColumnName="pMoves" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
